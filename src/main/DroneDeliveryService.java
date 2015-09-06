@@ -7,7 +7,7 @@ import java.util.List;
 
 public class DroneDeliveryService {
 
-    protected List<DroneTrip> findMostEfficientTrips(DroneTrip tripForAllDeliveries) {
+    public List<DroneTrip> findMostEfficientTrips(DroneTrip tripForAllDeliveries) {
         ArrayList<DroneTrip> droneTrips = new ArrayList<DroneTrip>();
         List<DeliveryLocation> allDeliveryLocations = tripForAllDeliveries.getDeliveryLocations();
         Collections.sort(allDeliveryLocations);
