@@ -1,9 +1,7 @@
 package main;
 
-/**
- * Created by Rajbir on 9/5/15.
- */
-public class DeliveryLocation implements Comparable<DeliveryLocation>{
+
+public class DeliveryLocation implements Comparable<DeliveryLocation> {
     private String name;
     private Integer deliveryWeight;
 
@@ -16,16 +14,8 @@ public class DeliveryLocation implements Comparable<DeliveryLocation>{
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public Integer getDeliveryWeight() {
         return deliveryWeight;
-    }
-
-    public void setDeliveryWeight(Integer deliveryWeight) {
-        this.deliveryWeight = deliveryWeight;
     }
 
     @Override

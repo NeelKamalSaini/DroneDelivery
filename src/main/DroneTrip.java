@@ -1,11 +1,7 @@
 package main;
 
-import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Rajbir on 9/5/15.
- */
 public class DroneTrip {
     private Drone drone;
     private List<DeliveryLocation> deliveryLocations;
@@ -21,10 +17,6 @@ public class DroneTrip {
 
     public Drone getDrone() {
         return drone;
-    }
-
-    public void setDrone(Drone drone) {
-        this.drone = drone;
     }
 
     public List<DeliveryLocation> getDeliveryLocations() {
