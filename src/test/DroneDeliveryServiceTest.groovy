@@ -19,8 +19,10 @@ class DroneDeliveryServiceTest extends Specification {
 
 
     def "should return most efficient trips"() {
+        given:
+        def droneTrip = createDroneTrip(deliveryWeights, droneCapacity);
         when:
-        def mostEfficientTrips = droneDeliveryService.findMostEfficientTrips(deliveryWeights, droneCapacity)
+        def mostEfficientTrips = droneDeliveryService.findMostEfficientTrips(droneTrip)
         then:
         expectedTripSize == mostEfficientTrips.size()
         where:
@@ -43,7 +45,6 @@ class DroneDeliveryServiceTest extends Specification {
     }
 
     def "should extract delivery Locations from input string"() {
-
         when:
         def deliveryLocations = droneDeliveryService.extractDeliveryLocationsFromInput(input)
 
@@ -59,10 +60,14 @@ class DroneDeliveryServiceTest extends Specification {
         "Library"    | 12                     | 2
     }
 
-//    def "should summarize the most efficient trips"(){
-//        when:
-//        def trips = droneDeliveryService.summarizeMostEfficientTrips(input)
-//        then:
+    def DroneTrip createDroneTrip(List<Integer> deliveryWeights, int droneCapacity) {
+        def droneTrip = new DroneTrip(new Drone("",droneCapacity))
+        def locations = new ArrayList<DeliveryLocation>()
+        for (Integer deliveryWeight : deliveryWeights) {
+            locations.add(new DeliveryLocation("",deliveryWeight))
+        }
+        droneTrip.setDeliveryLocations(locations)
+        droneTrip
+    }
 
-//    }
 }

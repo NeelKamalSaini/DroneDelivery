@@ -15,6 +15,10 @@ public class DroneTrip {
         this.deliveryLocations = deliveryLocations;
     }
 
+    public DroneTrip(Drone drone) {
+        this.drone = drone;
+    }
+
     public Drone getDrone() {
         return drone;
     }
