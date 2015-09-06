@@ -30,12 +30,4 @@ public class DroneTrip {
     public void setDeliveryLocations(List<DeliveryLocation> deliveryLocations) {
         this.deliveryLocations = deliveryLocations;
     }
-
-    public List<Integer> getDeliveryWeights(){
-        ArrayList<Integer> deliveryWeights = new ArrayList<Integer>();
-        for (DeliveryLocation deliveryLocation : deliveryLocations) {
-            deliveryWeights.add(deliveryLocation.getDeliveryWeight());
-        }
-        return deliveryWeights;
-    }
 }
