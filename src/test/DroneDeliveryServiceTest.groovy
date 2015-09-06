@@ -4,19 +4,16 @@ import main.DeliveryLocation
 import main.Drone
 import main.DroneDeliveryService
 import main.DroneTrip
-import spock.lang.*
+import spock.lang.Specification
 
-/**
- * Created by Rajbir on 9/4/15.
- */
+
 class DroneDeliveryServiceTest extends Specification {
 
     DroneDeliveryService droneDeliveryService = new DroneDeliveryService()
     String input = "Robbie, 45\n" +
-                "School, 15\n" +
-                "Hospital, 29\n" +
-                "Library, 12"
-
+            "School, 15\n" +
+            "Hospital, 29\n" +
+            "Library, 12"
 
     def "should return most efficient trips"() {
         given:
@@ -61,10 +58,10 @@ class DroneDeliveryServiceTest extends Specification {
     }
 
     def DroneTrip createDroneTrip(List<Integer> deliveryWeights, int droneCapacity) {
-        def droneTrip = new DroneTrip(new Drone("",droneCapacity))
+        def droneTrip = new DroneTrip(new Drone("", droneCapacity))
         def locations = new ArrayList<DeliveryLocation>()
         for (Integer deliveryWeight : deliveryWeights) {
-            locations.add(new DeliveryLocation("",deliveryWeight))
+            locations.add(new DeliveryLocation("", deliveryWeight))
         }
         droneTrip.setDeliveryLocations(locations)
         droneTrip
