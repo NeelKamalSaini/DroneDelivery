@@ -1,6 +1,5 @@
 package main;
 
-
 public class DeliveryLocation implements Comparable<DeliveryLocation> {
     private String name;
     private Integer deliveryWeight;

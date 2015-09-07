@@ -33,13 +33,13 @@ public class DroneDeliveryService {
         return droneTrips;
     }
 
-    protected Drone extractDroneFromInput(String inputString) {
+    public Drone extractDroneFromInput(String inputString) {
         String[] allLines = inputString.split("\n");
         String[] firstLine = allLines[0].split(", ");
         return new Drone(firstLine[0], Integer.parseInt(firstLine[1]));
     }
 
-    protected List<DeliveryLocation> extractDeliveryLocationsFromInput(String inputString) {
+    public List<DeliveryLocation> extractDeliveryLocationsFromInput(String inputString) {
         ArrayList<DeliveryLocation> deliveryLocations = new ArrayList<DeliveryLocation>();
         String[] allLines = inputString.split("\n");
         for (int i = 1; i < allLines.length; i++) {

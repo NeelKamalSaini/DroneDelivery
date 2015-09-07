@@ -2,18 +2,9 @@ package main;
 
 import java.util.List;
 
-public class DroneTripConsoleFormatter {
+public class ConsoleFormatter {
 
-    public static void main(String[] args) throws java.lang.Exception {
-        String input = "Robbie, 15\n" +
-                "School, 12\n" +
-                "Hospital, 5\n" +
-                "Library, 10\n" +
-                "Gym, 10";
-        printDroneTrips(findMostEfficientTrips(input));
-    }
-
-    private static List<DroneTrip> findMostEfficientTrips(String input) {
+    public static List<DroneTrip> findMostEfficientTrips(String input) {
         DroneDeliveryService droneDeliveryService = new DroneDeliveryService();
         Drone drone = droneDeliveryService.extractDroneFromInput(input);
         List<DeliveryLocation> deliveryLocations = droneDeliveryService.extractDeliveryLocationsFromInput(input);
@@ -21,7 +12,7 @@ public class DroneTripConsoleFormatter {
         return droneDeliveryService.findMostEfficientTrips(tripForAllDeliveries);
     }
 
-    private static void printDroneTrips(List<DroneTrip> droneTrips) {
+    public static void printDroneTrips(List<DroneTrip> droneTrips) {
         System.out.print(droneTrips.get(0).getDrone().getName());
         for (int i = 0; i < droneTrips.size(); i++) {
             System.out.println("\nTrip #" + (i + 1));
