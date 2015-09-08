@@ -21,9 +21,9 @@ class DroneDeliveryServiceTest extends Specification {
         when:
         def mostEfficientTrips = droneDeliveryService.findMostEfficientTrips(droneTrip)
         then:
-        expectedTripSize == mostEfficientTrips.size()
+        expectedTripsSize == mostEfficientTrips.size()
         where:
-        deliveryWeights                        | droneCapacity | expectedTripSize
+        deliveryWeights                        | droneCapacity | expectedTripsSize
         Arrays.asList(15)                      | 15            | 1
         Arrays.asList(5, 10)                   | 15            | 1
         Arrays.asList(10, 5)                   | 15            | 1
@@ -31,6 +31,7 @@ class DroneDeliveryServiceTest extends Specification {
         Arrays.asList(14, 10, 15)              | 15            | 3
         Arrays.asList(3, 1, 1, 1, 2, 2, 5, 14) | 15            | 2
         Arrays.asList(5, 10, 15, 15)           | 15            | 3
+        Arrays.asList(15, 14, 15, 15)          | 15            | 4
     }
 
     def "should extract drone from input string"() {
